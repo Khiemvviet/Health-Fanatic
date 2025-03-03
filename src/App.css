@@ -1,0 +1,29 @@
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .image-text-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .image-text-item {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .image-text-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .image-text-item p {
+    font-size: 16px;
+    color: #333;
+  }
+  
