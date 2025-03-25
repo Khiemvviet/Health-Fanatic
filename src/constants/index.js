@@ -48,6 +48,11 @@ export const navigation = [
         url:"/Nutrition",
     },
     {
+        id: "4",
+        title: "Meal",
+        url:"/Meal",
+    },
+    {
         id: "3",
         title: "Plan",
         url:"/Plan",
