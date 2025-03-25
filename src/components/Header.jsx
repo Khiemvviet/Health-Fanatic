@@ -61,7 +61,7 @@ const Header = () => {
 
     return (
         <>
-        <div className="fixed flex bg-n-4 w-full h-28 z-50 top-0 left-0 px-20 py-3" >
+        <div className="fixed flex backdrop-brightness-200 w-full h-28 z-50 top-0 left-0 px-20 py-3" >
             <div className=" flex justify-between items-center flex-1">
                 <Link to= "/">
                 <IoFootball size={80}color="red" onClick={handleClick}></IoFootball>
@@ -69,9 +69,9 @@ const Header = () => {
             </div>
 
             <nav className={`${ 
-                openNavigation ? "flex" : "hidden"}  text-n-1 font-bold justify-end bg-n-4 lg:flex`}>
+                openNavigation ? "flex" : "hidden"}  text-n-1 font-bold justify-end backdrop-brightness-200 lg:flex`}>
                 <div className="flex-1">
-                    <div className="flex flex-col gap-10 -mr-24 pb-5 px-20 mt-24 bg-n-4 justify-center items-center lg:flex-row lg:mt-9 lg:gap-20">
+                    <div className="flex flex-col gap-10 -mr-24 pb-5 px-20 mt-24 backdrop-brightness-200 justify-center items-center lg:flex-row lg:mt-9 lg:gap-20">
                         {navigation.map((item) => (
                             <div 
                                 key={item.id}
