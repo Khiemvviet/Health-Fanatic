@@ -3,6 +3,7 @@ import n1 from "../assets/N1.webp"
 import { nutri } from "../constants";
 import { health } from "../constants";
 import { junk } from "../constants";
+import { Link } from 'react-router-dom'; 
 
 
 
@@ -254,8 +255,22 @@ const Nutrition = () => {
                           </li>
                       ))}
                     </ul>
+                    <div className="w-full flex justify-center items-center mt-10">
+                      <button 
+                        className="text-n-4 bg-n-1 text-xl font-bold relative h-100vh px-10 py-5 border-solid border-r border-n-4 border-2 rounded-full hover:bg-n-2 hover:text-n-4"
+                      >
+                        <Link 
+                          to="/Meal" 
+                          className="w-full h-full flex items-center justify-center"
+                        >
+                          Generate a meal for you!
+                        </Link>
+                      </button>
+                    </div>
                   </div>
+                  
                 </div>
+                
               )}
               
               </div>

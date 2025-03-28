@@ -12,6 +12,7 @@ import Chest from "./components/Chest";
 import Core from "./components/Core";
 import Drill from "./components/Drill";
 import LowerBody from "./components/LowerBody";
+import Meal from "./components/Meal";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
@@ -32,6 +33,7 @@ function App() {
             <Route path= "/Drill" element = {<Drill/>} />
             <Route path= "/LowerBody" element = {<LowerBody/>} />
             <Route path= "/Nutrition" element = {<Nutrition/>} />
+            <Route path= "/Meal" element = {<Meal/>} />
             <Route path= "/Plan" element = {<Plan/>} />
             <Route path= "/Contact" element = {<Contact/>} />
           </Routes>

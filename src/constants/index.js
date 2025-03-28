@@ -21,6 +21,34 @@ import LE2 from "../assets/leg2.webp"
 import LE3 from "../assets/leg3.jpg"
 import LE4 from "../assets/leg4.jpg"
 import LE5 from "../assets/leg5.webp"
+import { LuSandwich, LuWheatOff, LuGrape, LuVegan } from "react-icons/lu";
+import { TbMeat } from "react-icons/tb";
+import { GiBroccoli } from "react-icons/gi";
+import Any_B from "../assets/Meal/Anything-b.jpg"
+import Any_D from "../assets/Meal/Anything-D.jpg"
+import Any_L from "../assets/Meal/Anything-L.jpg"
+
+import Keto_B from "../assets/Meal/Keto-B.jpg"
+import Keto_D from "../assets/Meal/Keto-D.jpg"
+import Keto_L from "../assets/Meal/Keto-L.jpg"
+
+import Med_B from "../assets/Meal/Med-B.jpg"
+import Med_D from "../assets/Meal/Med-D.jpeg"
+import Med_L from "../assets/Meal/Med-L.jpg"
+
+import Pa_B from "../assets/Meal/Pa-B.webp"
+import Pa_D from "../assets/Meal/Pa-D.jpg"
+import Pa_L from "../assets/Meal/Pa-L.jpg"
+
+import Ve_B from "../assets/Meal/Ve-B.jpg"
+import Ve_D from "../assets/Meal/Ve-D.jpg"
+import Ve_L from "../assets/Meal/Ve-L.jpg"
+
+import Vegan_B from "../assets/Meal/Vegan-B.jpg"
+import Vegan_D from "../assets/Meal/Vegan-D.jpg"
+import Vegan_L from "../assets/Meal/Vegan-L.jpg"
+
+
 
 
 export const navigation = [
@@ -301,3 +329,330 @@ export const buttonData = [
         benefit: "Enhances ball control, stamina, and quick directional changes under fatigue to simulate game conditions."
     },
   ]
+
+
+
+export const dietOptions = [
+  {
+    icon: <LuSandwich size={80} color="f2ff33" />,
+    label: "Anything",
+    meals: {
+      breakfast: {
+        dishName: "Protein-Packed Oatmeal",
+        image: Any_B,
+        ingredients: [
+            { name: "Rolled Oats", grams: 40 },
+            { name: "Banana", grams: 50 },
+            { name: "ALmond Butter", grams: 16 },
+            { name: "Milk", grams: 120 },
+            { name: "Chia seeds", grams: 15 }
+          ],
+          instructions: [
+            "1. Cook the oats according to the package instructions, using almond milk or water.",
+            "2. Once the oats are cooked, stir in the protein powder until well combined.",
+            "3. op with sliced banana, almond butter, chia seeds, and a sprinkle of cinnamon."
+          ]
+      },
+      lunch: {
+        dishName: "Grilled Chicken and Quinoa Salad",
+        image: Any_L,
+        ingredients: [
+            { name: "Chicken Breast", grams: 120 },
+            { name: "Quinoa", grams: 90 },
+            { name: "Mixed Greens", grams: 30 },
+            { name: "Cherry Tomatoes", grams: 50 },
+            { name: "Cucumber (Sliced)", grams: 50 },
+            { name: "Olive oil", grams: 15 }
+          ],
+          instructions: [
+            "1. Grill the chicken breast until cooked through and slice it into strips.",
+            "2. Toss the cooked quinoa with mixed greens, cherry tomatoes, and cucumber.",
+            "3. Drizzle with olive oil and lemon juice, then season with salt and pepper.",
+            "4. Top with grilled chicken strips."
+          ]
+      },
+      dinner: {
+        dishName: "Salmon with Roasted Vegetables and Sweet Potato",
+        image: Any_D,
+        ingredients: [
+            { name: "Salmon Fillet", grams: 150 },
+            { name: "Sweet Potato", grams: 200 }, // 1 medium sweet potato
+            { name: "Broccoli Florets", grams: 100 },
+            { name: "Olive Oil", grams: 15 },
+            { name: "Garlic Powder", grams: 1 }, // 1/2 teaspoon
+            { name: "Salt", grams: 0.5 }, // Adjust salt amount as per taste
+            { name: "Pepper", grams: 0.5 }, // Adjust pepper amount as per taste
+            { name: "Fresh Parsley", grams: 5, optional: true }
+          ],
+          instructions: [
+            "1. Preheat the oven to 200°C (400°F).",
+            "2. Toss the sweet potato cubes and broccoli florets in olive oil, garlic powder, salt, and pepper.",
+            "3. Place the veggies on a baking sheet and roast for 25-30 minutes, or until tender.",
+            "4. While the veggies roast, cook the salmon on a hot grill or skillet for about 3-4 minutes per side, until cooked through.",
+            "5. Serve the salmon with the roasted veggies, and sprinkle with fresh parsley if desired."
+          ]
+      },
+    }
+  },
+  {
+    icon: <LuWheatOff size={80} color="ffd133" />,
+    label: "Keto",
+    meals: {
+      breakfast: {
+        dishName: "Avocado Omelette",
+        image: Keto_B,
+        ingredients: [
+          { name: "Eggs", grams: 120 },
+          { name: "Avocado", grams: 100 },
+          { name: "Cheese", grams: 30 },
+          { name: "Spinach", grams: 50 }
+        ],
+        instructions: [
+          "1. Beat the eggs and add the spinach.",
+          "2. Heat the pan and cook the eggs with spinach.",
+          "3. Slice the avocado and place on top of the omelette.",
+          "4. Add cheese, fold, and serve."
+        ]
+      },
+      lunch: {
+        dishName: "Keto Salad",
+        image: Keto_L,
+        ingredients: [
+          { name: "Avocado", grams: 100 },
+          { name: "Chicken", grams: 150 },
+          { name: "Olives", grams: 30 },
+          { name: "Spinach", grams: 50 },
+          { name: "Cheese", grams: 40 }
+        ],
+        instructions: [
+          "1. Cook the chicken and slice it.",
+          "2. Mix the spinach, olives, and avocado.",
+          "3. Top with chicken and cheese.",
+          "4. Toss together and serve."
+        ]
+      },
+      dinner: {
+        dishName: "Grilled Salmon & Asparagus",
+        image: Keto_D,
+        ingredients: [
+          { name: "Salmon", grams: 150 },
+          { name: "Asparagus", grams: 100 },
+          { name: "Butter", grams: 20 },
+          { name: "Garlic", grams: 5 }
+        ],
+        instructions: [
+          "1. Preheat the grill or skillet.",
+          "2. Season the salmon and grill for 4-5 minutes per side.",
+          "3. Cook asparagus in butter and garlic for 4-5 minutes.",
+          "4. Serve the salmon with the asparagus."
+        ]
+      }
+    }
+  },
+  {
+    icon: <LuGrape size={80} color="e333ff" />,
+    label: "Mediterranean",
+    meals: {
+      breakfast: {
+        dishName: Med_B,
+        image: "greek_yogurt_nuts.jpg",
+        ingredients: [
+          { name: "Greek Yogurt", grams: 200 },
+          { name: "Almonds", grams: 30 },
+          { name: "Honey", grams: 15 },
+          { name: "Berries", grams: 50 }
+        ],
+        instructions: [
+          "1. Scoop the Greek yogurt into a bowl.",
+          "2. Top with almonds, honey, and fresh berries.",
+          "3. Serve and enjoy!"
+        ]
+      },
+      lunch: {
+        dishName: "Greek Salad",
+        image: Med_L,
+        ingredients: [
+          { name: "Cucumber", grams: 100 },
+          { name: "Tomato", grams: 100 },
+          { name: "Olives", grams: 30 },
+          { name: "Feta Cheese", grams: 50 },
+          { name: "Olive Oil", grams: 15 }
+        ],
+        instructions: [
+          "1. Chop the cucumber and tomato.",
+          "2. Combine with olives, feta cheese, and olive oil.",
+          "3. Toss and serve."
+        ]
+      },
+      dinner: {
+        dishName: "Grilled Fish & Quinoa",
+        image: Med_D,
+        ingredients: [
+          { name: "Fish", grams: 150 },
+          { name: "Quinoa", grams: 100 },
+          { name: "Zucchini", grams: 80 },
+          { name: "Lemon", grams: 10 }
+        ],
+        instructions: [
+          "1. Grill the fish with lemon juice and herbs.",
+          "2. Cook the quinoa according to package instructions.",
+          "3. Sauté zucchini with olive oil and serve with the fish."
+        ]
+      }
+    }
+  },
+  {
+    icon: <TbMeat size={80} color="ff6b33" />,
+    label: "Paleo",
+    meals: {
+      breakfast: {
+        dishName: "Scrambled Eggs & Sweet Potato",
+        image: Pa_B,
+        ingredients: [
+          { name: "Eggs", grams: 120 },
+          { name: "Sweet Potato", grams: 150 },
+          { name: "Olive Oil", grams: 10 },
+          { name: "Spinach", grams: 50 }
+        ],
+        instructions: [
+          "1. Scramble the eggs with olive oil and spinach.",
+          "2. Roast the sweet potato slices in the oven or skillet.",
+          "3. Serve together."
+        ]
+      },
+      lunch: {
+        dishName: "Paleo Bowl",
+        image: Pa_L,
+        ingredients: [
+          { name: "Chicken", grams: 150 },
+          { name: "Sweet Potato", grams: 150 },
+          { name: "Spinach", grams: 50 },
+          { name: "Avocado", grams: 100 }
+        ],
+        instructions: [
+          "1. Grill the chicken and slice it.",
+          "2. Roast the sweet potatoes.",
+          "3. Assemble the bowl with chicken, sweet potato, spinach, and avocado."
+        ]
+      },
+      dinner: {
+        dishName: "Steak & Roasted Vegetables",
+        image: Pa_D,
+        ingredients: [
+          { name: "Steak", grams: 200 },
+          { name: "Bell Peppers", grams: 100 },
+          { name: "Mushrooms", grams: 100 },
+          { name: "Olive Oil", grams: 15 }
+        ],
+        instructions: [
+          "1. Grill or pan-sear the steak.",
+          "2. Roast bell peppers and mushrooms with olive oil.",
+          "3. Serve together."
+        ]
+      }
+    }
+  },
+  {
+    icon: <LuVegan size={80} color="33ff56" />,
+    label: "Vegan",
+    meals: {
+      breakfast: {
+        dishName: "Oatmeal & Fruits",
+        image: Vegan_B,
+        ingredients: [
+          { name: "Oats", grams: 50 },
+          { name: "Banana", grams: 100 },
+          { name: "Almond Milk", grams: 200 },
+          { name: "Chia Seeds", grams: 10 }
+        ],
+        instructions: [
+          "1. Cook the oats with almond milk.",
+          "2. Slice the banana and add to the oatmeal.",
+          "3. Sprinkle chia seeds on top and serve."
+        ]
+      },
+      lunch: {
+        dishName: "Vegan Burrito",
+        image: Vegan_L,
+        ingredients: [
+          { name: "Black Beans", grams: 100 },
+          { name: "Rice", grams: 100 },
+          { name: "Lettuce", grams: 50 },
+          { name: "Guacamole", grams: 30 },
+          { name: "Salsa", grams: 30 }
+        ],
+        instructions: [
+          "1. Warm the rice and black beans.",
+          "2. Layer the rice, beans, lettuce, guacamole, and salsa in a tortilla.",
+          "3. Roll it up and serve."
+        ]
+      },
+      dinner: {
+        dishName: "Tofu Stir-fry",
+        image: Vegan_D,
+        ingredients: [
+          { name: "Tofu", grams: 150 },
+          { name: "Broccoli", grams: 100 },
+          { name: "Soy Sauce", grams: 20 },
+          { name: "Carrots", grams: 80 }
+        ],
+        instructions: [
+          "1. Sauté the tofu in soy sauce until crispy.",
+          "2. Stir-fry the broccoli and carrots.",
+          "3. Combine tofu with vegetables and serve."
+        ]
+      }
+    }
+  },
+  {
+    icon: <GiBroccoli size={80} color="green" />,
+    label: "Vegetarian",
+    meals: {
+      breakfast: {
+        dishName: "Smoothie Bowl",
+        image: Ve_B,
+        ingredients: [
+          { name: "Banana", grams: 100 },
+          { name: "Berries", grams: 100 },
+          { name: "Almond Milk", grams: 200 },
+          { name: "Granola", grams: 30 }
+        ],
+        instructions: [
+          "1. Blend the banana, berries, and almond milk.",
+          "2. Pour into a bowl and top with granola."
+        ]
+      },
+      lunch: {
+        dishName: "Vegetarian Pasta",
+        image: Ve_L,
+        ingredients: [
+          { name: "Pasta", grams: 100 },
+          { name: "Tomato Sauce", grams: 150 },
+          { name: "Olives", grams: 30 },
+          { name: "Mozzarella", grams: 40 },
+          { name: "Basil", grams: 10 }
+        ],
+        instructions: [
+          "1. Cook the pasta according to package instructions.",
+          "2. Heat the tomato sauce and toss with pasta.",
+          "3. Add olives, mozzarella, and basil on top."
+        ]
+      },
+      dinner: {
+        dishName: "Stuffed Peppers",
+        image: Ve_D,
+        ingredients: [
+          { name: "Bell Peppers", grams: 150 },
+          { name: "Quinoa", grams: 100 },
+          { name: "Black Beans", grams: 100 },
+          { name: "Corn", grams: 50 }
+        ],
+        instructions: [
+          "1. Cook quinoa and mix with black beans and corn.",
+          "2. Stuff bell peppers with the quinoa mixture.",
+          "3. Roast the stuffed peppers for 20 minutes and serve."
+        ]
+      }
+    }
+  }
+];
