@@ -1,6 +1,8 @@
 import React from 'react';
 import { back } from "../constants";
 import v1 from "../assets/v1.mp4"
+import Contact from "./Contact";
+
 
 const Back = () => {
   return (
@@ -53,6 +55,10 @@ const Back = () => {
           </div>
         </div>
       ))}
+    </div>
+    <div>
+      
+      <Contact />
     </div>
     </>
   );

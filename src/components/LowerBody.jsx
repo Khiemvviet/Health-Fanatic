@@ -1,6 +1,8 @@
 import React from 'react';
 import { lower } from "../constants";
 import v2 from "../assets/v2.mp4"
+import Contact from "./Contact";
+
 
 const LowerBody = () => {
   return (
@@ -53,6 +55,9 @@ const LowerBody = () => {
           </div>
         </div>
       ))}
+    </div>
+    <div>
+      <Contact />
     </div>
     </>
   );

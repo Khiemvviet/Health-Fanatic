@@ -4,7 +4,12 @@ import { nutri } from "../constants";
 import { health } from "../constants";
 import { junk } from "../constants";
 import { Link } from 'react-router-dom'; 
+import Contact from "./Contact";
 
+
+const handleClick = () => {
+  window.scrollTo(0, 0);
+};
 
 
 const Nutrition = () => {
@@ -95,8 +100,7 @@ const Nutrition = () => {
           <div id="Intro" className="w-full text-center lg:text-left lg:pl-[10%] lg:mr-[10%] lg:mt-5">
             <h1 className="font-bold mt-20 mb-10 text-7xl text-n-4 leading-loose">Nutrition</h1>
             <p className="text-n-3 text-2xl mb-10 leading-relaxed">
-              Nutrition is crucial for soccer players, as the sport requires stamina, agility, strength, and quick recovery. Here’s a guide to help you develop an optimal nutrition plan
-            </p>
+            Fueling your body right is key to peak athletic performance. A well-balanced nutrition plan enhances endurance, strength, and recovery, keeping you at your best on and off the field            </p>
           </div>
 
           <div className="w-full relative overflow-hidden md:pl-[2%] md:pr-[5%]" >
@@ -262,6 +266,8 @@ const Nutrition = () => {
                         <Link 
                           to="/Meal" 
                           className="w-full h-full flex items-center justify-center"
+                          onClick={handleClick}
+
                         >
                           Generate a meal for you!
                         </Link>
@@ -278,6 +284,9 @@ const Nutrition = () => {
           </div>
         </div>
       </div>
+      <div>
+      <Contact />
+    </div>
 
 
 

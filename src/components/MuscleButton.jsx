@@ -21,7 +21,7 @@ const MuscleButton = () => {
   return (
     <div className="w-full min-h-[screen] py-10 ">
       <div className="text-n-4 text-center mt-10 ">
-        <h1 className=" text-6xl font-bold ">Get Started!</h1>
+        <h1 className=" text-6xl font-bold ">Workouts!</h1>
         <p className="pt-10 text-xl">Learn how muscle is a key factor for your performance.</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-3 pt-10 justify-center items-center">

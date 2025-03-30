@@ -3,6 +3,7 @@ import Intro from "./Intro";
 import MuscleButton from "./MuscleButton";
 import goat from "../assets/Goat1.mp4"
 import AboutUs  from "./AboutUs";
+import Contact from "./Contact";
 
 const Home = () => {
   const ScrolltoSection =(id)=>{
@@ -46,6 +47,7 @@ const Home = () => {
       </div>
       <Intro />
       <MuscleButton />
+      <Contact />
     </div>
     </>
   );

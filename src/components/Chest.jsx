@@ -1,6 +1,8 @@
 import React from 'react';
 import { chest } from "../constants";
 import v1 from "../assets/v1.mp4"
+import Contact from "./Contact";
+
 
 const Chest = () => {
   return (
@@ -53,6 +55,9 @@ const Chest = () => {
           </div>
         </div>
       ))}
+    </div>
+    <div>
+      <Contact />
     </div>
     </>
   );

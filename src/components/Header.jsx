@@ -6,6 +6,8 @@ import { navigation } from "../constants"
 import MenuSvg from "./MenuSvg"
 import { GoChevronDown } from "react-icons/go";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { FcSportsMode } from "react-icons/fc";
+
 
 
 
@@ -64,7 +66,7 @@ const Header = () => {
         <div className="fixed flex bg-n-4 w-full h-28 z-50 top-0 left-0 px-20 py-3" >
             <div className=" flex justify-between items-center flex-1">
                 <Link to= "/">
-                <IoFootball size={80}color="red" onClick={handleClick}></IoFootball>
+                <FcSportsMode size={80} onClick={handleClick}></FcSportsMode>
                 </Link>
             </div>
 

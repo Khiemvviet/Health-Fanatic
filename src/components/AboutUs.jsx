@@ -9,10 +9,8 @@ const AboutUs = () => {
         <div className="flex flex-col px-5 lg:text-left lg:flex-row py-5 ">
           <div id="Intro" className="w-full text-center lg:text-left lg:pl-[10%] lg:mr-[10%] lg:mt-5">
             <h1 className="font-bold mt-20 mb-10 text-5xl text-n-4 leading-loose">Health Fanatic</h1>
-            <p className="text-n-3 text-xl mb-10 leading-relaxed">
-            Welcome to Health Fanatics—your premier online destination for athlete-centered fitness, nutrition, and wellness. Tailored specifically for athletes, Health Fanatics offers expert workout plans, in-depth exercise guides, and personalized nutrition advice to help you unlock your full potential.
-
-            Whether you're an aspiring athlete seeking to enhance your routine or a seasoned professional fine-tuning your regimen, Health Fanatics equips you with the resources and tools needed to reach your fitness goals and sustain a healthy, balanced lifestyle.
+            <p className="text-n-4 text-xl mb-10 leading-relaxed">
+            Welcome to Health Fanatics—your go-to hub for athlete-focused fitness, nutrition, and wellness. Get expert workout plans, exercise guides, and personalized nutrition advice to maximize performance and maintain a balanced lifestyle.
             </p>
           </div>
 

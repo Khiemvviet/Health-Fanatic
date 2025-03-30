@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Contact from "./Contact";
 import { Link } from 'react-router-dom'; 
 import g2 from "../assets/g2.jpg";
 import { LuSandwich, LuWheatOff, LuGrape, LuVegan } from "react-icons/lu";
@@ -349,6 +350,10 @@ const dietOptions = [
     }
   ];
 
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
 
   const Meal = () => {
     const [nutrition, setNutrition] = useState({
@@ -371,38 +376,49 @@ const dietOptions = [
     };
   
     const generateMeal = () => {
+      if (!nutrition.calories || !nutrition.carbs || !nutrition.fats || !nutrition.protein) {
+        alert("Please enter all nutritional values (Calories, Carbs, Fats, and Protein) before generating meals.");
+        return;
+      }
+    
       const totalCalories = parseInt(nutrition.calories, 10);
       const totalCarbs = parseInt(nutrition.carbs, 10);
       const totalFats = parseInt(nutrition.fats, 10);
       const totalProtein = parseInt(nutrition.protein, 10);
-  
+    
+      if (isNaN(totalCalories) || isNaN(totalCarbs) || isNaN(totalFats) || isNaN(totalProtein)) {
+        alert("Please enter valid numeric values.");
+        return;
+      }
+    
       const breakfast = {
         calories: totalCalories * 0.25,
         carbs: totalCarbs * 0.25,
         fats: totalFats * 0.25,
         protein: totalProtein * 0.25,
       };
-  
+    
       const lunch = {
         calories: totalCalories * 0.35,
         carbs: totalCarbs * 0.35,
         fats: totalFats * 0.35,
         protein: totalProtein * 0.35,
       };
-  
+    
       const dinner = {
         calories: totalCalories * 0.40,
         carbs: totalCarbs * 0.40,
         fats: totalFats * 0.40,
         protein: totalProtein * 0.40,
       };
-  
+    
       setGeneratedMeals({
         breakfast,
         lunch,
         dinner,
       });
     };
+    
   
     return (
       <div className="relative">
@@ -411,7 +427,7 @@ const dietOptions = [
             <div id="Intro" className="w-full text-center lg:text-left lg:pl-[10%] lg:mr-[10%] lg:mt-5">
               <h1 className="font-bold mt-20 mb-10 text-5xl text-n-4 leading-loose">Effortless Nutrition, Personalized for You</h1>
               <p className="text-n-3 text-xl mb-10 leading-relaxed">
-                Take the guesswork out of meal planning. Eat This Much designs customized meal plans tailored to your preferences, budget, and lifestyle.
+                Take the guesswork out of meal planning. Health Fanatic designs customized meal plans tailored to your preferences, budget, and lifestyle.
               </p>
             </div>
   
@@ -429,18 +445,21 @@ const dietOptions = [
           Create Your Meal Plan
     </h1>
     <div className="w-fit max-w-full p-8 border-2 border-n-4 rounded-2xl shadow-lg">
-        <div className="bg-n-1 flex flex-wrap gap-6 grid-cols-3 justify-center py-10">
-          {dietOptions.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedDiet(option.label)}
-              className={`w-40 lg:w-32 h-32 flex flex-col items-center justify-center border-2 rounded-lg text-n-4 bg-n-1 shadow-md hover:bg-n-3 transition ${selectedDiet === option.label ? "border-n-2 bg-n-3" : "border-n-4"}`}
-            >
-              {option.icon}
-              <span className="mt-2 text-lg">{option.label}</span>
-            </button>
-          ))}
-        </div>
+    <div className="bg-n-1 flex flex-wrap gap-6 grid-cols-3 justify-center py-10">
+      {dietOptions.map((option, index) => (
+        <button
+          key={index}
+          onClick={() => setSelectedDiet(option.label)}
+          className={`w-40 lg:w-32 h-32 flex flex-col items-center justify-center border-2 rounded-lg text-n-4 shadow-md transition ${selectedDiet === option.label ? "bg-gray-400 border-n-4" : "hover:bg-n-3 border-n-4"}`}
+        >
+          {option.icon}
+          <span className="mt-2 text-lg">{option.label}</span>
+        </button>
+      ))}
+    </div>
+
+
+
         <div className="mt-10 text-center">
               <p className="text-n-4 text-xl mb-4">I want to eat</p>
               <div className="flex justify-center gap-8">
@@ -498,6 +517,8 @@ const dietOptions = [
                 <Link 
                   to="/nutrition" 
                   className="font-bold underline text-n-4 cursor-pointer hover:text-n-2"
+                  onClick={handleClick}
+
                 >
                   Calorie Calculator
                 </Link>
@@ -513,37 +534,64 @@ const dietOptions = [
         </div>
   
         {selectedDiet && generatedMeals && (
-          <div className="bg-n-2 py-10 px-5">
-            <h2 className="text-2xl text-n-4 mb-5">{selectedDiet} Meal Plan</h2>
-            <div className="flex flex-col space-y-5">
-              {['breakfast', 'lunch', 'dinner'].map((mealTime) => (
-                <div key={mealTime} className="bg-n-3 p-5 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-n-1 capitalize">{generatedMeals[mealTime].dishName}</h3>
-                  <img src={dietOptions.find(option => option.label === selectedDiet).meals[mealTime].image} alt={mealTime} className="w-full rounded-lg" />
-                  <ul className="mt-3">
-                    {dietOptions.find(option => option.label === selectedDiet).meals[mealTime].ingredients.map((ingredient, idx) => (
-                      <li key={idx}>{ingredient}</li>
-                    ))}
-                  </ul>
-                  <ol className="mt-3">
-                    {dietOptions.find(option => option.label === selectedDiet).meals[mealTime].instructions.map((instruction, idx) => (
-                      <li key={idx}>{instruction}</li>
-                    ))}
-                  </ol>
-                  <div className="mt-5">
-                    <strong>Nutrition:</strong>
-                    <p>Calories: {Math.round(generatedMeals[mealTime].calories)} kcal</p>
-                    <p>Carbs: {Math.round(generatedMeals[mealTime].carbs)} g</p>
-                    <p>Fats: {Math.round(generatedMeals[mealTime].fats)} g</p>
-                    <p>Protein: {Math.round(generatedMeals[mealTime].protein)} g</p>
-                  </div>
-                </div>
-              ))}
+  <div className="bg-n-1 py-10 px-5">
+    <h2 className="text-n-4 text-center font-bold text-3xl mb-10">
+      {selectedDiet} Meal Plan
+    </h2>
+    <div className="w-full px-5 flex flex-col text-balance text-left lg:pl-[5%] lg:mr-[20%] lg:mt-5">
+      {['breakfast', 'lunch', 'dinner'].map((mealTime) => {
+        const mealData = dietOptions
+          .find(option => option.label === selectedDiet)
+          ?.meals[mealTime];
+
+        const generatedMeal = generatedMeals[mealTime];
+
+        return (
+          <div key={mealTime} className="bg-n-1 border border-n-4 p-5 rounded-lg shadow-md flex flex-col lg:flex-row items-center mb-5">
+            <div className="lg:w-2/3">
+              <h3 className="text-3xl font-semibold text-n-4 capitalize">
+                {generatedMeal?.dishName || mealData?.dishName}
+              </h3>
+              <ul className="mt-3">
+                <strong>Ingredients:</strong>
+                {mealData?.ingredients?.map((ingredient, idx) => (
+                  <li key={idx}>{ingredient}</li>
+                ))}
+              </ul>
+              <ol className="mt-3">
+                <strong>Instructions:</strong>
+                {mealData?.instructions?.map((instruction, idx) => (
+                  <li key={idx}>{instruction}</li>
+                ))}
+              </ol>
+              <div className="mt-5">
+                <strong>Nutrition:</strong>
+                <p>Calories: {Math.round(generatedMeal?.calories)} kcal</p>
+                <p>Carbs: {Math.round(generatedMeal?.carbs)} g</p>
+                <p>Fats: {Math.round(generatedMeal?.fats)} g</p>
+                <p>Protein: {Math.round(generatedMeal?.protein)} g</p>
+              </div>
+            </div>
+            <div className="lg:w-1/3 lg:ml-5">
+              <img
+                src={mealData?.image}
+                alt={mealTime}
+                className="mt-5 mb-5 w-full border-n-4 border-2 rounded-lg shadow-md"
+              />
             </div>
           </div>
-        )}
-      </div>
+        );
+      })}
+    </div>
+  </div>
+)}
+<div>
+      <Contact />
+    </div>
+    </div>
+    
     );
-  };
-  
-  export default Meal;
+    
+  }
+export default Meal;
+

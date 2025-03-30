@@ -21,10 +21,9 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Submitted:', formData);
-    alert('Thank you for your message!');
+    alert('Thank you for your message! A specialist will get back to you shortly.');
     localStorage.setItem('userContact', JSON.stringify(formData));
     
-
     setFormData({
       name: '',
       email: '',
@@ -36,10 +35,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 pt-28 ">
       <div className="bg-white max-w-6xl mx-auto grid md:grid-cols-2 gap-8 border-n-4 border-2">
-      <div className="bg-white rounded-xl overflow-hidden">
+        <div className="bg-white rounded-xl overflow-hidden">
           <div className="p-4">
             <div className="w-full h-96 bg-gray-200 flex items-center justify-center ">
-            <iframe 
+              <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.5823274287454!2d-79.47773177551093!3d43.74917957911666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2ab71b54563d%3A0xb06d2271133d13d6!2s75+Carl+Hall+Rd%2C+North+York%2C+ON+M3K+2B9%2C+Canada!5e0!3m2!1sen!2s!4v1732738391658!5m2!1sen!2s" 
                 height="100%" 
                 style={{ border: 0 }}
@@ -64,15 +63,12 @@ const Contact = () => {
                 >
                   <GiTrophy style={{ fontSize: '40px', color: 'white' }} />
                 </div>
-                <div style={{textAlign: 'left', marginLeft: '20px'}}>
+                <div style={{textAlign: 'left', marginLeft: '20px'}} className='text-n-4'>
                   <h1 className="mt-2" style={{ fontSize: '20px' }}>
-                    40 years leading training center
+                    Health Fanatic 
                   </h1>
-                  <p className='mt-2'>
-                    For over 50 years, 3020 Soccer Centre has been recognised as an
-                    industry leader. We operate two separate facilities in Vietnam and have
-                    provided high quality soccer training solutions to players and teams
-                    around the world.
+                  <p className='mt-2 text-n-4'>
+                    Health Fanatics provides expert advice, personalized meal plans, and fitness strategies specifically for athletes. Get the guidance you need to reach your peak performance.
                   </p>
                 </div>
               </div>
@@ -90,27 +86,25 @@ const Contact = () => {
                     flexShrink: 0, 
                   }}
                 >
-                  <FaCogs  style={{ fontSize: '40px', color: 'white' }} />
+                  <FaCogs style={{ fontSize: '40px', color: 'white' }} />
                 </div>
-                <div style={{textAlign: 'left', marginLeft: '20px'}}>
+                <div style={{textAlign: 'left', marginLeft: '20px'}} className='text-n-4'>
                   <h1 className="mt-2" style={{ fontSize: '20px' }}>
-                    State of the Art Soccer Training Facility
+                    Tailored Athlete Advice
                   </h1>
                   <p className='mt-2'>
-                    Over the years, continuous on-field analysis and extensive training methods 
-                    have kept our soccer training center at the forefront of the industry. 
-                    This commitment to innovation has allowed us to offer cutting-edge training techniques that deliver 
-                    exceptional results for players and teams alike.
+                    Our specialists are here to provide you with customized advice on nutrition, fitness, and performance, helping you optimize your training and achieve your goals.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="bg-white rounded-xl overflow-hidden">
           <div className="p-6">
             <h2 className="text-3xl font-bold text-center">
-              Contact to us
+              Contact Us for Athlete Guidance
             </h2>
           </div>
           
@@ -181,19 +175,19 @@ const Contact = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm  text-white bg-n-2 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors font-bold"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm text-white bg-n-2 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors font-bold"
               >
-                Send
+                Send Message
               </button>
             </div>
           </form>
 
           <div className="p-6 text-center flex justify-center">
             <div className="text-sm text-gray-600 space-y-2">
-              <p className="text-left">⚽ Soccer Training Center</p>
+              <p className="text-left">⚽ Health Fanatic</p>
               <p className="text-left">📍 North York, Toronto, Canada</p>
               <p className="text-left">📞 (+1) 123-456-789</p>
-              <p className="text-left">✉️ contact@trikhiemsoccertraining.com</p>
+              <p className="text-left">✉️ contact@healthfanatic.com</p>
             </div>
           </div>
         </div>

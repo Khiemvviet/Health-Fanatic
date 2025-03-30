@@ -1,6 +1,8 @@
 import React from 'react';
 import { core } from "../constants";
 import v2 from "../assets/v2.mp4"
+import Contact from "./Contact";
+
 
 const Core = () => {
   return (
@@ -54,7 +56,11 @@ const Core = () => {
         </div>
       ))}
     </div>
+    <div>
+      <Contact />
+    </div>
     </>
+    
   );
 };
 
