@@ -57,7 +57,6 @@ const Back = () => {
       ))}
     </div>
     <div>
-      
       <Contact />
     </div>
     </>

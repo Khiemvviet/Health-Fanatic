@@ -146,7 +146,7 @@ const Plan = () => {
       <div className="max-w-4xl p-6 bg-n-1 shadow-lg rounded-xl mt-10 mb-10 mx-auto border-n-4 border-2">
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">Workout Schedule ({selectedPlan.replace("-", " ")})</h1>
         {workoutPlans[selectedPlan].map((section) => (
-          <WorkoutSection borderColor='red' key={section.day} day={section.day} exercises={section.exercises} />
+          <WorkoutSection  key={section.day} day={section.day} exercises={section.exercises} />
         ))}
       </div>
       <div>
