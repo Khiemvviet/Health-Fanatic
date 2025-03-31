@@ -372,9 +372,22 @@ const dietOptions = [
       protein: "",
     });
     
+    useEffect(() => {
+      const storedData = localStorage.getItem("userNutrition");
+      if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        setNutrition({
+          calories: parsedData.bmr || "",
+          carbs: parsedData.macros.carbs || "",
+          fats: parsedData.macros.fats || "",
+          protein: parsedData.macros.protein || "",
+        });
+      }
+    }, []);
   
     const handleInputChange = (e, field) => {
       const value = e.target.value;
+
     
       // Check if the value is a valid number and not negative
       const numericValue = parseFloat(value);

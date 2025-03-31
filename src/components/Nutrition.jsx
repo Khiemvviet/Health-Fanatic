@@ -236,10 +236,10 @@ const Nutrition = () => {
                   <div className=" w-full  absolute z-0 inset-0 -m-5 bg-n-2 lg:mr-[10%]"> </div>
                   <div className="mt-5 mb-5 px-3 py-5  bg-gray-300 relative border-n-4 border-4 z-10 rounded-lg">
                     <h3 className="font-bold text-5xl">Daily Intake:</h3>
-                    <p className="mt-5 py-3"><strong>BMR:</strong> {bmr.toFixed(0)} calories/day</p>
-                    <p className="py-3"><strong>Protein:</strong> {macros.protein.toFixed(0)}  grams/day</p>
-                    <p className="py-3"><strong>Fats:</strong> {macros.fats.toFixed(0)} grams/day</p>
-                    <p className="py-3"><strong>Carbs:</strong> {macros.carbs.toFixed(0)} grams/day</p>
+                    <p className="mt-5 py-3 font-bold"><strong>BMR:</strong> {bmr.toFixed(0)} calories/day</p>
+                    <p className="py-3 font-bold"><strong>Protein:</strong> {macros.protein.toFixed(0)}  grams/day</p>
+                    <p className="py-3 font-bold"><strong>Fats:</strong> {macros.fats.toFixed(0)} grams/day</p>
+                    <p className="py-3 font-bold"><strong>Carbs:</strong> {macros.carbs.toFixed(0)} grams/day</p>
 
                     
                     <h3 className="font-bold mt-5 text-5xl">Eat:</h3>

@@ -138,21 +138,21 @@ export const buttonData = [
 
 
   export const health = [
-    { description: "Lean Proteins: Chicken, turkey, fish, tofu, and legumes for muscle repair and growth." },
-    { description: "Whole Grains: Brown rice, quinoa, oats, and whole-grain pasta for sustained energy." },
-    { description: "Healthy Fats: Avocado, nuts, seeds, and olive oil to support joint health and energy." },
-    { description: "Fruits and Vegetables: Variety of colors for essential vitamins, minerals, and antioxidants." },
-    { description: "Hydrating Beverages: Water, coconut water, and electrolyte drinks to stay hydrated." },
+    { description: "Lean Proteins: Chicken, fish, tofu, and legumes for muscle growth." },
+    { description: "Whole Grains: Brown rice, quinoa, oats for sustained energy." },
+    { description: "Healthy Fats: Avocado, nuts, seeds, and olive oil for joint health." },
+    { description: "Fruits and Vegetables: A variety for essential vitamins and antioxidants." },
+    { description: "Hydrating Beverages: Water, coconut water, and electrolyte drinks." },
   ];
-
-
+  
   export const junk = [
-    { description: "Sugary Drinks and Snacks: Soda, candy, and pastries can lead to energy crashes." },
-    { description: "Fried and Processed Foods: Chips, fast food, and processed meats can increase inflammation." },
-    { description: "High-Fat Dairy Products: Such as whole milk and heavy cream, which can be harder to digest." },
-    { description: "Alcohol: Can impact hydration, recovery, and overall athletic performance." },
-    { description: "Excessive Caffeine: In high doses, it can lead to dehydration and jitteriness." },
+    { description: "Sugary Snacks: Soda, candy, and pastries lead to energy crashes." },
+    { description: "Fried Foods: Chips, fast food, and processed meats increase inflammation." },
+    { description: "High-Fat Dairy: Whole milk and cream can be hard to digest." },
+    { description: "Alcohol: Affects hydration and athletic performance." },
+    { description: "Excessive Caffeine: Can cause dehydration and jitters." },
   ];
+  
 
 
 
