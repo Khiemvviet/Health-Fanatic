@@ -120,6 +120,7 @@ const Contact = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
+                placeholder="Enter your full name"
                 className="mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-0  transition-colors border-n-4 border-2"
                 style={{height: '45px', padding: '15px'}}
               />
@@ -136,6 +137,7 @@ const Contact = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="Enter your email address"
                 className="mt-1 block w-full rounded-md  shadow-sm focus:outline-none focus:ring-0  transition-colors border-n-4 border-2"
                 style={{height: '45px', padding: '15px'}}
               />
@@ -151,6 +153,7 @@ const Contact = () => {
                 id="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                placeholder="Enter your phone number"
                 className="mt-1 block w-full rounded-md  shadow-sm focus:outline-none focus:ring-0  transition-colors border-n-4 border-2"
                 style={{height: '45px', padding: '15px'}}
               />
@@ -167,6 +170,7 @@ const Contact = () => {
                 required
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="Write your message here..."
                 className="mt-1 block w-full rounded-md  shadow-sm focus:outline-none focus:ring-0  transition-colors border-n-4 border-2"
                 style={{padding: '15px'}}
               ></textarea>

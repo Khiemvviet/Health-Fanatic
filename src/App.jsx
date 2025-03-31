@@ -6,7 +6,7 @@ import  Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MuscleButton from "./components/MuscleButton";
 import Nutrition from "./components/Nutrition";
-import Plan from "./components/Plan"
+import Routine from "./components/Routine"
 import Back from "./components/Back";
 import Chest from "./components/Chest";
 import Core from "./components/Core";
@@ -34,7 +34,7 @@ function App() {
             <Route path= "/LowerBody" element = {<LowerBody/>} />
             <Route path= "/Nutrition" element = {<Nutrition/>} />
             <Route path= "/Meal" element = {<Meal/>} />
-            <Route path= "/Plan" element = {<Plan/>} />
+            <Route path= "/Routine" element = {<Routine/>} />
             <Route path= "/Contact" element = {<Contact/>} />
           </Routes>
 

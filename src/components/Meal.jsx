@@ -365,15 +365,38 @@ const dietOptions = [
   
     const [selectedDiet, setSelectedDiet] = useState("");
     const [generatedMeals, setGeneratedMeals] = useState(null);
+    const [errors, setErrors] = useState({
+      calories: "",
+      carbs: "",
+      fats: "",
+      protein: "",
+    });
+    
   
-    // Input handlers for user nutrition data
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
+    const handleInputChange = (e, field) => {
+      const value = e.target.value;
+    
+      // Check if the value is a valid number and not negative
+      const numericValue = parseFloat(value);
+      if (isNaN(numericValue) || numericValue < 0) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          [field]: "Please enter a valid number (no negative values).",
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          [field]: "",
+        }));
+      }
+    
+      // Update nutrition state
       setNutrition((prevState) => ({
         ...prevState,
-        [name]: value
+        [field]: value,
       }));
     };
+    
   
     const generateMeal = () => {
       if (!nutrition.calories || !nutrition.carbs || !nutrition.fats || !nutrition.protein) {
@@ -460,134 +483,138 @@ const dietOptions = [
 
 
 
-        <div className="mt-10 text-center">
-              <p className="text-n-4 text-xl mb-4">I want to eat</p>
-              <div className="flex justify-center gap-8">
-                <div className="flex flex-col items-center">
-                  <input
-                    type="number"
-                    value={nutrition.calories}
-                    onChange={(e) => setNutrition({ ...nutrition, calories: e.target.value })}
-                    placeholder="2000"
-                    className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
-                  />
-                  <span className="text-sm">calories</span>
-                </div>
-              </div>
-  
-              <p className="text-n-4 text-xl mb-4 mt-6">At least</p>
-              <div className="flex justify-center gap-8">
-                <div className="flex flex-col items-center">
-                  <input
-                    type="number"
-                    value={nutrition.carbs}
-                    onChange={(e) => setNutrition({ ...nutrition, carbs: e.target.value })}
-                    placeholder="50"
-                    className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
-                  />
-                  <span className="text-sm">g Carbs</span>
-                </div>
-  
-                <div className="flex flex-col items-center">
-                  <input
-                    type="number"
-                    value={nutrition.fats}
-                    onChange={(e) => setNutrition({ ...nutrition, fats: e.target.value })}
-                    placeholder="44"
-                    className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
-                  />
-                  <span className="text-sm">g Fat</span>
-                </div>
-  
-                <div className="flex flex-col items-center">
-                  <input
-                    type="number"
-                    value={nutrition.protein}
-                    onChange={(e) => setNutrition({ ...nutrition, protein: e.target.value })}
-                    placeholder="50"
-                    className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
-                  />
-                  <span className="text-sm">g Protein</span>
-                </div>
-              </div>
-  
-              <p className="mt-6 text-n-3 text-sm">
-                Not sure?{" "}
-                <span className="text-n-3">Try our </span>
-                <Link 
-                  to="/nutrition" 
-                  className="font-bold underline text-n-4 cursor-pointer hover:text-n-2"
-                  onClick={handleClick}
+    <div className="mt-10 text-center">
+      <p className="text-n-4 text-xl mb-4">I want to eat</p>
+      <div className="flex justify-center gap-8">
+        <div className="flex flex-col items-center">
+          <input
+            type="number"
+            value={nutrition.calories}
+            onChange={(e) => handleInputChange(e, "calories")}
+            placeholder="2000"
+            className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
+          />
+          <span className="text-sm">calories</span>
+          {errors.calories && <p className="text-red-500 text-sm">{errors.calories}</p>}
+        </div>
+      </div>
 
-                >
-                  Calorie Calculator
-                </Link>
-              </p>
-              <button 
-                  className="text-n-4 text-xl mt-5 font-bold relative h-100vh border-n-4 border-2 px-10 py-5 rounded-full hover:bg-n-2 hover:text-n-4"
-                  onClick={generateMeal}
-              >
-                  Generate
-              </button>
-              </div>
+      <p className="text-n-4 text-xl mb-4 mt-6">At least</p>
+      <div className="flex justify-center gap-8">
+        <div className="flex flex-col items-center">
+          <input
+            type="number"
+            value={nutrition.carbs}
+            onChange={(e) => handleInputChange(e, "carbs")}
+            placeholder="50"
+            className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
+          />
+          <span className="text-sm">g Carbs</span>
+          {errors.carbs && <p className="text-red-500 text-sm">{errors.carbs}</p>}
+        </div>
+
+        <div className="flex flex-col items-center">
+          <input
+            type="number"
+            value={nutrition.fats}
+            onChange={(e) => handleInputChange(e, "fats")}
+            placeholder="44"
+            className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
+          />
+          <span className="text-sm">g Fat</span>
+          {errors.fats && <p className="text-red-500 text-sm">{errors.fats}</p>}
+        </div>
+
+        <div className="flex flex-col items-center">
+          <input
+            type="number"
+            value={nutrition.protein}
+            onChange={(e) => handleInputChange(e, "protein")}
+            placeholder="50"
+            className="w-24 p-2 border-2 border-n-4 rounded-lg mb-2 text-center"
+          />
+          <span className="text-sm">g Protein</span>
+          {errors.protein && <p className="text-red-500 text-sm">{errors.protein}</p>}
+        </div>
+      </div>
+
+      <p className="mt-6 text-n-3 text-sm">
+        Not sure?{" "}
+        <span className="text-n-3">Try our </span>
+        <Link
+          to="/nutrition"
+          className="font-bold underline text-n-4 cursor-pointer hover:text-n-2"
+          onClick={handleClick}
+        >
+          Calorie Calculator
+        </Link>
+      </p>
+      <button
+        className="text-n-4 text-xl mt-5 font-bold relative h-100vh border-n-4 border-2 px-10 py-5 rounded-full hover:bg-n-2 hover:text-n-4"
+        onClick={generateMeal}
+      >
+        Generate
+      </button>
+    </div>
+
         </div>
         </div>
   
         {selectedDiet && generatedMeals && (
-  <div className="bg-n-1 py-10 px-5">
-    <h2 className="text-n-4 text-center font-bold text-3xl mb-10">
-      {selectedDiet} Meal Plan
-    </h2>
-    <div className="w-full px-5 flex flex-col text-balance text-left lg:pl-[5%] lg:mr-[20%] lg:mt-5">
-      {['breakfast', 'lunch', 'dinner'].map((mealTime) => {
-        const mealData = dietOptions
-          .find(option => option.label === selectedDiet)
-          ?.meals[mealTime];
+          <div className="bg-n-1 py-10 px-5">
+            <h2 className="text-n-4 text-center font-bold text-3xl mb-10">
+              {selectedDiet} Meal Plan
+            </h2>
+            <div className="w-full px-5 flex flex-col text-balance text-left lg:pl-[5%] lg:mr-[20%] lg:mt-5">
+              {['breakfast', 'lunch', 'dinner'].map((mealTime) => {
+                const mealData = dietOptions
+                  .find(option => option.label === selectedDiet)
+                  ?.meals[mealTime];
 
-        const generatedMeal = generatedMeals[mealTime];
+                const generatedMeal = generatedMeals[mealTime];
 
-        return (
-          <div key={mealTime} className="bg-n-1 border border-n-4 p-5 rounded-lg shadow-md flex flex-col lg:flex-row items-center mb-5">
-            <div className="lg:w-2/3">
-              <h3 className="text-3xl font-semibold text-n-4 capitalize">
-                {generatedMeal?.dishName || mealData?.dishName}
-              </h3>
-              <ul className="mt-3">
-                <strong>Ingredients:</strong>
-                {mealData?.ingredients?.map((ingredient, idx) => (
-                  <li key={idx}>{ingredient}</li>
-                ))}
-              </ul>
-              <ol className="mt-3">
-                <strong>Instructions:</strong>
-                {mealData?.instructions?.map((instruction, idx) => (
-                  <li key={idx}>{instruction}</li>
-                ))}
-              </ol>
-              <div className="mt-5">
-                <strong>Nutrition:</strong>
-                <p>Calories: {Math.round(generatedMeal?.calories)} kcal</p>
-                <p>Carbs: {Math.round(generatedMeal?.carbs)} g</p>
-                <p>Fats: {Math.round(generatedMeal?.fats)} g</p>
-                <p>Protein: {Math.round(generatedMeal?.protein)} g</p>
-              </div>
-            </div>
-            <div className="lg:w-1/3 lg:ml-5">
-              <img
-                src={mealData?.image}
-                alt={mealTime}
-                className="mt-5 mb-5 w-full border-n-4 border-2 rounded-lg shadow-md"
-              />
+                return (
+                  <div key={mealTime} className="bg-n-1 border border-n-4 p-5 rounded-lg shadow-md flex flex-col lg:flex-row items-center mb-5">
+                    <div className="lg:w-2/3">
+                      <h3 className="text-3xl font-semibold text-n-4 capitalize">
+                        {generatedMeal?.dishName || mealData?.dishName}
+                      </h3>
+                      <ul className="mt-3">
+                        <strong>Ingredients:</strong>
+                        {mealData?.ingredients?.map((ingredient, idx) => (
+                          <li key={idx}>{ingredient}</li>
+                        ))}
+                      </ul>
+                      <ol className="mt-3">
+                        <strong>Instructions:</strong>
+                        {mealData?.instructions?.map((instruction, idx) => (
+                          <li key={idx}>{instruction}</li>
+                        ))}
+                      </ol>
+                      <div className="mt-5">
+                        <strong>Nutrition:</strong>
+                        <p>Calories: {Math.round(generatedMeal?.calories)} kcal</p>
+                        <p>Carbs: {Math.round(generatedMeal?.carbs)} g</p>
+                        <p>Fats: {Math.round(generatedMeal?.fats)} g</p>
+                        <p>Protein: {Math.round(generatedMeal?.protein)} g</p>
+                      </div>
+                    </div>
+                    <div className="lg:w-1/3 lg:ml-5">
+                      <img
+                        src={mealData?.image}
+                        alt={mealTime}
+                        className="mt-5 mb-5 w-full border-n-4 border-2 rounded-lg shadow-md"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        );
-      })}
-    </div>
-  </div>
-)}
-<div>
-      <Contact />
-    </div>
+        )}
+      <div>
+        <Contact />
+      </div>
     </div>
     
     );

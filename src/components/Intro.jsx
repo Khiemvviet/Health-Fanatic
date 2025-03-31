@@ -41,11 +41,20 @@ const Intro = () => {
             </ul>
           </div>
 
-          <Link to="/Nutrition" onClick={handleClick}>
-            <button className="text-n-1 text-xl font-bold relative h-100vh px-10 py-5 border-solid border-r border-2 rounded-full hover:bg-n-1 hover:text-n-4 mt-9">
-              Athlete Fuel 
-            </button>
-          </Link>
+          <div className="flex justify-center gap-4 mt-9">
+            <Link to="/Nutrition" onClick={handleClick}>
+              <button className="text-n-1 text-xl font-bold px-10 py-5 border-solid border-r border-2 rounded-full hover:bg-n-1 hover:text-n-4">
+                Athlete Fuel
+              </button>
+            </Link>
+
+            {/* New Button to direct to the Meal Page */}
+            <Link to="/Meal" onClick={handleClick}>
+              <button className="text-n-1 text-xl mx-6 font-bold px-10 py-5 border-solid border-r border-2 rounded-full hover:bg-n-1 hover:text-n-4">
+                Healthy Recipes
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

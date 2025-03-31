@@ -77,8 +77,8 @@ export const navigation = [
     },
     {
         id: "3",
-        title: "Plan",
-        url:"/Plan",
+        title: "Routine",
+        url:"/Routine",
     },
     {
         id: "4",

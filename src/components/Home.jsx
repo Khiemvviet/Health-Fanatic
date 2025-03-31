@@ -4,7 +4,7 @@ import MuscleButton from "./MuscleButton";
 import goat from "../assets/Goat1.mp4"
 import AboutUs  from "./AboutUs";
 import Contact from "./Contact";
-
+import Train from "./Train";
 const Home = () => {
   const ScrolltoSection =(id)=>{
     const section =document.getElementById(id)
@@ -47,6 +47,7 @@ const Home = () => {
       </div>
       <Intro />
       <MuscleButton />
+      <Train />
       <Contact />
     </div>
     </>

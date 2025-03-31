@@ -4,7 +4,7 @@ import f4 from "../assets/f4.jpg";
 import Contact from "./Contact";
 
 
-const Plan = () => {
+const Routine = () => {
   const [selectedPlan, setSelectedPlan] = useState("3-days");
 
 
@@ -156,4 +156,4 @@ const Plan = () => {
   );
 }
 
-export default Plan;
+export default Routine;
